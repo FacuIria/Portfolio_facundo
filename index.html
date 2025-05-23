@@ -7,84 +7,72 @@
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
   <style>
-    /* Variables para modo claro */
+    /* Paleta de colores Modo Claro */
     :root {
-      --azul-suave: #e6f0fa;
-      --azul-medio: #c0d6eb;
-      --gris-fondo: #f5f7fa;
-      --gris-bloque: #eaeaea;
-      --azul-oscuro: #2a4d69;
-      --texto-principal: #2a4d69;
-      --fondo-header: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1470&q=80');
-      --fondo-cuerpo: var(--gris-fondo);
-      --fondo-bloques: var(--gris-bloque);
-      --color-boton: var(--azul-oscuro);
-      --color-boton-hover: #1d3557;
-      --color-texto-input: var(--azul-oscuro);
-      --color-fondo-input: white;
-      --color-enlaces: var(--azul-oscuro);
-      --color-enlaces-hover: #5881b4;
+      --color-fondo-cuerpo: #fff8f0;       /* blanco cremoso */
+      --color-fondo-bloque: #fff3e0;       /* naranja pálido */
+      --color-texto-principal: #5a3e36;    /* marrón oscuro */
+      --color-acento: #f97316;              /* naranja fuerte */
+      --color-boton: #f97316;
+      --color-boton-hover: #d4620b;
+      --color-fondo-header: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1470&q=80');
+      --color-fondo-input: #fff;
+      --color-texto-input: #5a3e36;
+      --color-enlaces: #f97316;
+      --color-enlaces-hover: #d4620b;
     }
 
-    /* Variables para modo oscuro */
+    /* Paleta Modo Oscuro */
     body.dark-mode {
-      --azul-suave: #1e293b;
-      --azul-medio: #3b82f6;
-      --gris-fondo: #121212;
-      --gris-bloque: #1f2937;
-      --azul-oscuro: #a5b4fc;
-      --texto-principal: #a5b4fc;
-      --fondo-header: none; /* Opcional, puedes cambiar */
-      --fondo-cuerpo: #121212;
-      --fondo-bloques: #1f2937;
-      --color-boton: #a5b4fc;
-      --color-boton-hover: #818cf8;
-      --color-texto-input: #e0e7ff;
-      --color-fondo-input: #2d3748;
-      --color-enlaces: #a5b4fc;
-      --color-enlaces-hover: #818cf8;
+      --color-fondo-cuerpo: #121b22;       /* azul muy oscuro */
+      --color-fondo-bloque: #1e2a38;       /* azul oscuro */
+      --color-texto-principal: #ffa65c;    /* naranja claro */
+      --color-acento: #ff8c42;              /* naranja fuerte */
+      --color-boton: #ff8c42;
+      --color-boton-hover: #cc7234;
+      --color-fondo-header: url('https://images.unsplash.com/photo-1501594907352-04cda38ebc29?auto=format&fit=crop&w=1470&q=80'); /* foto nocturna */
+      --color-fondo-input: #243447;
+      --color-texto-input: #ffa65c;
+      --color-enlaces: #ffa65c;
+      --color-enlaces-hover: #ff8c42;
     }
 
+    /* Reset y cuerpo */
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background-color: var(--fondo-cuerpo);
-      color: var(--texto-principal);
+      background-color: var(--color-fondo-cuerpo);
+      color: var(--color-texto-principal);
       font-size: 12px;
-      transition: background-color 0.3s ease, color 0.3s ease;
+      transition: background-color 0.4s ease, color 0.4s ease;
     }
 
     header {
-      background-image: var(--fondo-header);
+      background-image: var(--color-fondo-header);
       background-size: cover;
       background-position: center;
       padding: 5rem 1rem;
       text-align: center;
       position: relative;
-      color: var(--texto-principal);
-      transition: background-image 0.3s ease;
+      color: var(--color-texto-principal);
+      transition: background-image 0.4s ease, color 0.4s ease;
     }
 
-    /* En modo oscuro ocultamos la imagen del header para mejor contraste */
-    body.dark-mode header {
-      background-image: none;
-      background-color: var(--gris-bloque);
-    }
-
+    /* Fondo semitransparente sobre el header para mejor lectura */
     .header-overlay {
-      background-color: rgba(255, 255, 255, 0.8);
+      background-color: rgba(255, 248, 240, 0.85); /* claro */
       display: inline-block;
       padding: 2rem 3rem;
       border-radius: 15px;
       box-shadow: 0 0 15px rgba(0,0,0,0.1);
-      color: var(--texto-principal);
-      transition: background-color 0.3s ease, color 0.3s ease;
+      color: var(--color-texto-principal);
+      transition: background-color 0.4s ease, color 0.4s ease;
     }
 
     body.dark-mode .header-overlay {
-      background-color: rgba(38, 50, 56, 0.9);
-      box-shadow: 0 0 15px rgba(165,180,252,0.5);
-      color: var(--texto-principal);
+      background-color: rgba(18, 27, 34, 0.85); /* oscuro */
+      box-shadow: 0 0 15px rgba(255, 166, 92, 0.7);
+      color: var(--color-texto-principal);
     }
 
     h1 {
@@ -93,36 +81,35 @@
       text-align: center;
     }
 
-    /* Subtítulos centrados */
     .subtitle {
       font-size: 1.4rem;
       margin-top: 0.5rem;
       text-align: center;
       font-weight: 500;
-      color: var(--texto-principal);
-      transition: color 0.3s ease;
+      color: var(--color-texto-principal);
+      transition: color 0.4s ease;
     }
 
     section {
       padding: 2rem;
       max-width: 900px;
       margin: 2rem auto;
-      background-color: var(--fondo-bloques);
+      background-color: var(--color-fondo-bloque);
       border-radius: 12px;
-      transition: background-color 0.3s ease;
+      transition: background-color 0.4s ease;
     }
 
     h2 {
-      color: var(--texto-principal);
+      color: var(--color-texto-principal);
       margin-bottom: 1.5rem;
       text-align: center;
       font-weight: bold;
-      border-bottom: 2px solid var(--azul-medio);
+      border-bottom: 2px solid var(--color-acento);
       display: inline-block;
       padding-bottom: 0.3rem;
       margin-left: auto;
       margin-right: auto;
-      transition: color 0.3s ease, border-color 0.3s ease;
+      transition: color 0.4s ease, border-color 0.4s ease;
     }
 
     .languages-container {
@@ -138,33 +125,34 @@
       border-radius: 12px;
       padding: 1.2rem;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: default;
     }
 
     .language-item:hover {
       transform: scale(1.05);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
     }
 
     .language-item img {
       height: 90px;
       display: block;
       margin: 0 auto 10px auto;
-      filter: var(--icon-filter);
+      filter: none; /* sin filtro, para que los colores originales se vean */
       transition: filter 0.3s ease;
     }
 
     .language-item p {
       font-size: 1.3rem;
       font-weight: bold;
-      color: var(--texto-principal);
-      transition: color 0.3s ease;
+      color: var(--color-texto-principal);
+      transition: color 0.4s ease;
     }
 
     .contact-form {
       background-color: transparent;
       padding: 2rem;
       border-radius: 12px;
-      color: var(--texto-principal);
+      color: var(--color-texto-principal);
       max-width: 500px;
       margin: auto;
     }
@@ -179,7 +167,7 @@
       width: 100%;
       background-color: var(--color-fondo-input);
       color: var(--color-texto-input);
-      transition: background-color 0.3s ease, color 0.3s ease;
+      transition: background-color 0.4s ease, color 0.4s ease;
     }
 
     .contact-form input::placeholder,
@@ -191,7 +179,7 @@
     .contact-form input:focus,
     .contact-form textarea:focus {
       outline: none;
-      box-shadow: 0 0 5px var(--azul-medio);
+      box-shadow: 0 0 8px var(--color-acento);
     }
 
     .contact-form button {
@@ -202,7 +190,7 @@
       font-size: 1rem;
       border-radius: 12px;
       cursor: pointer;
-      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      transition: background-color 0.4s ease, box-shadow 0.4s ease;
     }
 
     .contact-form button:hover {
@@ -216,12 +204,13 @@
       justify-content: center;
       gap: 2rem;
       font-size: 1.2rem;
+      margin-bottom: 2rem;
     }
 
     .social-links li a {
       color: var(--color-enlaces);
       text-decoration: none;
-      transition: color 0.3s ease;
+      transition: color 0.4s ease;
     }
 
     .social-links li a:hover {
@@ -229,12 +218,12 @@
     }
 
     footer {
-      background-color: var(--fondo-bloques);
-      color: #666;
+      background-color: var(--color-fondo-bloque);
+      color: #888;
       padding: 1rem 0;
       text-align: center;
       font-size: 0.85rem;
-      transition: background-color 0.3s ease, color 0.3s ease;
+      transition: background-color 0.4s ease, color 0.4s ease;
     }
 
     /* Botón para cambiar tema */
@@ -291,49 +280,35 @@
         <p>SQL</p>
       </div>
     </div>
+  </section>
 
-    <h2>Redes Sociales</h2>
-    <ul class="social-links">
-      <li><a href="https://www.linkedin.com/in/facundo-iriarte-54259b183" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
-      <li><a href="https://www.instagram.com/facu_iriartee/" target="_blank" rel="noopener"><i class="fab fa-instagram"></i> Instagram</a></li>
-      <li><a href="https://github.com/FacuIria" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a></li>
-    </ul>
-
-    <h2>Formulario de Contacto</h2>
-    <form class="contact-form" action="https://formspree.io/f/xjkwjwzj" method="POST">
-      <input type="text" name="nombre" placeholder="Tu nombre" required />
-      <input type="email" name="correo" placeholder="Tu correo" required />
-      <textarea name="mensaje" placeholder="Escribí tu mensaje..." rows="5" required></textarea>
+  <section>
+    <h2>Contacto</h2>
+    <form class="contact-form" action="mailto:facuiria03@gmail.com" method="post" enctype="text/plain">
+      <input type="text" name="nombre" placeholder="Nombre" required />
+      <input type="email" name="email" placeholder="Correo electrónico" required />
+      <textarea name="mensaje" rows="5" placeholder="Mensaje" required></textarea>
       <button type="submit">Enviar</button>
     </form>
   </section>
 
-  <footer>
-    <p>&copy; 2025 Facundo Iriarte - Todos los derechos reservados</p>
-  </footer>
+  <button id="btn-toggle-theme" aria-label="Cambiar modo">🌙</button>
 
-  <!-- Botón para cambiar tema -->
-  <button id="btn-toggle-theme" aria-label="Cambiar modo claro/oscuro">🌙</button>
+  <footer>
+    &copy; 2025 Facundo Iriarte
+  </footer>
 
   <script>
     const btnToggle = document.getElementById('btn-toggle-theme');
     const body = document.body;
 
-    // Detecta tema guardado
-    const savedTheme = localStorage.getItem('theme');
-    if(savedTheme === 'dark') {
-      body.classList.add('dark-mode');
-      btnToggle.textContent = '☀️';
-    }
-
     btnToggle.addEventListener('click', () => {
       body.classList.toggle('dark-mode');
-      if(body.classList.contains('dark-mode')) {
+
+      if (body.classList.contains('dark-mode')) {
         btnToggle.textContent = '☀️';
-        localStorage.setItem('theme', 'dark');
       } else {
         btnToggle.textContent = '🌙';
-        localStorage.setItem('theme', 'light');
       }
     });
   </script>
