@@ -6,7 +6,6 @@
   <title>Facundo Iriarte - Portfolio</title>
 
   <style>
-    /* Variables de color */
     :root {
       --color-fondo-cuerpo: #fff8f0;
       --color-fondo-bloque: #fff3e0;
@@ -14,7 +13,7 @@
       --color-acento: #f97316;
       --color-boton: #f97316;
       --color-boton-hover: #d4620b;
-      --color-fondo-header: url('https://images.unsplash.com/photo-1501594907352-04cda38ebc29?auto=format&fit=crop&w=1470&q=80'); /* puente Golden Gate día */
+      --color-fondo-header: url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1470&q=80'); /* computadora */
       --color-fondo-input: #fff;
       --color-texto-input: #5a3e36;
       --color-enlaces: #f97316;
@@ -28,20 +27,19 @@
       --color-acento: #ff8c42;
       --color-boton: #ff8c42;
       --color-boton-hover: #cc7234;
-      --color-fondo-header: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1470&q=80'); /* puente Golden Gate noche */
+      --color-fondo-header: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1470&q=80'); /* programador de noche */
       --color-fondo-input: #243447;
       --color-texto-input: #ffa65c;
       --color-enlaces: #ffa65c;
       --color-enlaces-hover: #ff8c42;
     }
 
-    /* Reset y cuerpo */
     body {
       margin: 0;
       font-family: Arial, sans-serif;
       background-color: var(--color-fondo-cuerpo);
       color: var(--color-texto-principal);
-      font-size: 16px; /* aumento de tamaño */
+      font-size: 17px;
       line-height: 1.6;
       transition: background-color 0.4s ease, color 0.4s ease;
     }
@@ -57,7 +55,6 @@
       transition: background-image 0.4s ease, color 0.4s ease;
     }
 
-    /* Fondo semitransparente para mejorar lectura */
     .header-overlay {
       background-color: rgba(255, 248, 240, 0.85);
       display: inline-block;
@@ -65,28 +62,22 @@
       border-radius: 15px;
       box-shadow: 0 0 15px rgba(0,0,0,0.1);
       color: var(--color-texto-principal);
-      transition: background-color 0.4s ease, color 0.4s ease;
     }
 
     body.dark-mode .header-overlay {
       background-color: rgba(18, 27, 34, 0.85);
       box-shadow: 0 0 15px rgba(255, 166, 92, 0.7);
-      color: var(--color-texto-principal);
     }
 
     h1 {
       font-size: 3rem;
       margin: 0;
-      text-align: center;
     }
 
     .subtitle {
       font-size: 1.4rem;
       margin-top: 0.5rem;
-      text-align: center;
       font-weight: 500;
-      color: var(--color-texto-principal);
-      transition: color 0.4s ease;
     }
 
     main {
@@ -95,35 +86,27 @@
       padding: 2rem 1rem;
     }
 
-    /* Ahora un solo bloque para todo el contenido */
     section {
       background-color: var(--color-fondo-bloque);
       border-radius: 12px;
       padding: 2rem 2.5rem;
       margin-bottom: 2rem;
       transition: background-color 0.4s ease;
-      text-align: center; /* para centrar títulos y subtítulos */
+      text-align: center;
     }
 
     h2 {
-      color: var(--color-texto-principal);
       margin-bottom: 1.5rem;
       font-weight: bold;
       border-bottom: 2px solid var(--color-acento);
       display: inline-block;
       padding-bottom: 0.3rem;
-      margin-left: auto;
-      margin-right: auto;
-      transition: color 0.4s ease, border-color 0.4s ease;
-      text-align: center;
     }
 
     p {
       max-width: 700px;
       margin: 0 auto 1.6rem auto;
-      text-align: center;
-      font-size: 1rem;
-      line-height: 1.5;
+      font-size: 1.1rem;
     }
 
     .languages-container {
@@ -135,44 +118,26 @@
     }
 
     .language-item {
-      background-color: transparent;
       border-radius: 12px;
-      padding: 1.2rem;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      cursor: default;
+      padding: 1rem;
       text-align: center;
       width: 110px;
     }
 
-    .language-item:hover {
-      transform: scale(1.05);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-    }
-
     .language-item img {
-      height: 90px;
-      margin: 0 auto 10px auto;
-      filter: none;
-      transition: filter 0.3s ease;
-      display: block;
+      height: 80px;
+      margin-bottom: 10px;
     }
 
     .language-item p {
-      font-size: 1.3rem;
+      font-size: 1.2rem;
       font-weight: bold;
-      color: var(--color-texto-principal);
-      margin: 0;
-      transition: color 0.4s ease;
     }
 
     .contact-form {
-      background-color: transparent;
-      padding-top: 1rem;
-      border-radius: 12px;
-      color: var(--color-texto-principal);
       max-width: 600px;
       margin: 0 auto;
-      text-align: left; /* Para el formulario, texto alineado a la izquierda */
+      text-align: left;
     }
 
     .contact-form label {
@@ -191,8 +156,6 @@
       background-color: var(--color-fondo-input);
       color: var(--color-texto-input);
       font-size: 1rem;
-      transition: background-color 0.4s ease, color 0.4s ease;
-      box-sizing: border-box;
     }
 
     .contact-form button {
@@ -203,7 +166,6 @@
       font-size: 1rem;
       border-radius: 8px;
       cursor: pointer;
-      transition: background-color 0.3s ease;
     }
 
     .contact-form button:hover {
@@ -213,14 +175,13 @@
     a {
       color: var(--color-enlaces);
       text-decoration: none;
-      transition: color 0.3s ease;
+      font-weight: bold;
     }
 
     a:hover {
       color: var(--color-enlaces-hover);
     }
 
-    /* Botón modo oscuro */
     #darkModeToggle {
       position: fixed;
       top: 20px;
@@ -231,8 +192,8 @@
       padding: 0.5rem 1rem;
       border-radius: 8px;
       cursor: pointer;
-      transition: background-color 0.3s ease;
       z-index: 10;
+      font-size: 1.2rem;
     }
 
     #darkModeToggle:hover {
@@ -241,7 +202,7 @@
   </style>
 </head>
 <body>
-  <button id="darkModeToggle">Modo oscuro</button>
+  <button id="darkModeToggle">🌙</button>
 
   <header>
     <div class="header-overlay">
@@ -258,18 +219,25 @@
       <h2>Lenguajes que manejo</h2>
       <div class="languages-container">
         <div class="language-item">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" />
+          <img src="https://cdn-icons-png.flaticon.com/512/919/919852.png" alt="Python" />
           <p>Python</p>
         </div>
         <div class="language-item">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" />
+          <img src="https://cdn-icons-png.flaticon.com/512/226/226777.png" alt="Java" />
           <p>Java</p>
         </div>
         <div class="language-item">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="SQL" />
+          <img src="https://cdn-icons-png.flaticon.com/512/4248/4248443.png" alt="SQL" />
           <p>SQL</p>
         </div>
       </div>
+
+      <h2>Redes Sociales</h2>
+      <p>
+        <a href="https://www.instagram.com/facu_iriartee/" target="_blank">Instagram</a> |
+        <a href="https://www.linkedin.com/in/facundo-iriarte-54259b183/" target="_blank">LinkedIn</a> |
+        <a href="https://github.com/FacuIria" target="_blank">GitHub</a>
+      </p>
 
       <h2>Contacto</h2>
       <form class="contact-form" action="mailto:facuiria03@gmail.com" method="post" enctype="text/plain">
@@ -291,21 +259,16 @@
     const toggleBtn = document.getElementById('darkModeToggle');
     const body = document.body;
 
-    function updateButtonText() {
-      if (body.classList.contains('dark-mode')) {
-        toggleBtn.textContent = 'Modo claro';
-      } else {
-        toggleBtn.textContent = 'Modo oscuro';
-      }
+    function updateButtonIcon() {
+      toggleBtn.textContent = body.classList.contains('dark-mode') ? '☀️' : '🌙';
     }
 
     toggleBtn.addEventListener('click', () => {
       body.classList.toggle('dark-mode');
-      updateButtonText();
+      updateButtonIcon();
     });
 
-    // Inicializar texto botón según modo por defecto
-    updateButtonText();
+    updateButtonIcon();
   </script>
 </body>
 </html>
