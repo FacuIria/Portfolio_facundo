@@ -18,30 +18,9 @@
 
     body {
       margin: 0;
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Facundo Iriarte - Portfolio</title>
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-
-  <style>
-    :root {
-      --gris-fondo: #1e1e1e;
-      --gris-bloque: #2e2e2e;
-      --texto-principal: #f0f0f0;
-      --fondo-header: rgba(0, 0, 0, 0.5);
-      --azul-oscuro: #8ab4f8;
-      --resaltado: #3c4043;
-      --fuente: Arial, sans-serif;
-    }
-
-    body {
-      margin: 0;
       font-family: var(--fuente);
       background-color: var(--gris-fondo);
-      color: var(--texto-principal);
+      color: var(--azul-oscuro);
       font-size: 12px;
     }
 
@@ -52,27 +31,25 @@
       padding: 5rem 1rem;
       text-align: center;
       position: relative;
-      color: var(--texto-principal);
+      color: var(--azul-oscuro);
     }
 
     .header-overlay {
-      background-color: rgba(0, 0, 0, 0.6);
+      background-color: rgba(255, 255, 255, 0.8);
       display: inline-block;
       padding: 2rem 3rem;
       border-radius: 15px;
-      box-shadow: 0 0 15px rgba(255,255,255,0.1);
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
     }
 
     h1 {
       font-size: 3rem;
       margin: 0;
-      color: #fff;
     }
 
     .subtitle {
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       margin-top: 0.5rem;
-      color: #ccc;
     }
 
     section {
@@ -88,7 +65,7 @@
       margin-bottom: 1.5rem;
       text-align: center;
       font-weight: bold;
-      border-bottom: 2px solid var(--azul-oscuro);
+      border-bottom: 2px solid var(--azul-medio);
       display: inline-block;
       padding-bottom: 0.3rem;
     }
@@ -102,7 +79,7 @@
     }
 
     .language-item {
-      background-color: var(--resaltado);
+      background-color: var(--azul-suave);
       border-radius: 12px;
       padding: 1.2rem;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -110,7 +87,7 @@
 
     .language-item:hover {
       transform: scale(1.05);
-      box-shadow: 0 8px 20px rgba(255, 255, 255, 0.1);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     }
 
     .language-item img {
@@ -122,13 +99,14 @@
     .language-item p {
       font-size: 1.3rem;
       font-weight: bold;
-      color: var(--texto-principal);
+      color: var(--azul-oscuro);
     }
 
     .contact-form {
-      background-color: var(--resaltado);
+      background-color: var(--azul-medio);
       padding: 2rem;
       border-radius: 12px;
+      color: var(--azul-oscuro);
     }
 
     .contact-form input,
@@ -139,14 +117,12 @@
       border-radius: 6px;
       font-size: 1rem;
       width: 100%;
-      background-color: #444;
-      color: #fff;
     }
 
     .contact-form input:focus,
     .contact-form textarea:focus {
       outline: none;
-      box-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     }
 
     .contact-form button {
@@ -161,7 +137,7 @@
     }
 
     .contact-form button:hover {
-      background-color: #6c9ee4;
+      background-color: #1d3557;
     }
 
     .social-links {
@@ -180,12 +156,12 @@
     }
 
     .social-links li a:hover {
-      color: #ffffff;
+      color: #5881b4;
     }
 
     footer {
       background-color: var(--gris-bloque);
-      color: #aaa;
+      color: #666;
       padding: 1rem 0;
       text-align: center;
       font-size: 0.85rem;
@@ -231,7 +207,7 @@
       <li><a href="https://www.instagram.com/facu_iriartee/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
       <li><a href="https://github.com/FacuIria" target="_blank"><i class="fab fa-github"></i> GitHub</a></li>
     </ul>
-
+  
     <h2>Formulario de Contacto</h2>
     <form class="contact-form" action="https://formspree.io/f/xjkwjwzj" method="POST" style="max-width: 500px; margin: auto;">
       <input type="text" name="nombre" placeholder="Tu nombre" required />
