@@ -2,36 +2,73 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Facundo Iriarte - Portfolio</title>
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
   <style>
+    /* Variables para modo claro */
     :root {
       --azul-suave: #e6f0fa;
       --azul-medio: #c0d6eb;
       --gris-fondo: #f5f7fa;
       --gris-bloque: #eaeaea;
       --azul-oscuro: #2a4d69;
-      --fuente: Arial, sans-serif;
+      --texto-principal: #2a4d69;
+      --fondo-header: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1470&q=80');
+      --fondo-cuerpo: var(--gris-fondo);
+      --fondo-bloques: var(--gris-bloque);
+      --color-boton: var(--azul-oscuro);
+      --color-boton-hover: #1d3557;
+      --color-texto-input: var(--azul-oscuro);
+      --color-fondo-input: white;
+      --color-enlaces: var(--azul-oscuro);
+      --color-enlaces-hover: #5881b4;
+    }
+
+    /* Variables para modo oscuro */
+    body.dark-mode {
+      --azul-suave: #1e293b;
+      --azul-medio: #3b82f6;
+      --gris-fondo: #121212;
+      --gris-bloque: #1f2937;
+      --azul-oscuro: #a5b4fc;
+      --texto-principal: #a5b4fc;
+      --fondo-header: none; /* Opcional, puedes cambiar */
+      --fondo-cuerpo: #121212;
+      --fondo-bloques: #1f2937;
+      --color-boton: #a5b4fc;
+      --color-boton-hover: #818cf8;
+      --color-texto-input: #e0e7ff;
+      --color-fondo-input: #2d3748;
+      --color-enlaces: #a5b4fc;
+      --color-enlaces-hover: #818cf8;
     }
 
     body {
       margin: 0;
-      font-family: var(--fuente);
-      background-color: var(--gris-fondo);
-      color: var(--azul-oscuro);
+      font-family: Arial, sans-serif;
+      background-color: var(--fondo-cuerpo);
+      color: var(--texto-principal);
       font-size: 12px;
+      transition: background-color 0.3s ease, color 0.3s ease;
     }
 
     header {
-      background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1470&q=80');
+      background-image: var(--fondo-header);
       background-size: cover;
       background-position: center;
       padding: 5rem 1rem;
       text-align: center;
       position: relative;
-      color: var(--azul-oscuro);
+      color: var(--texto-principal);
+      transition: background-image 0.3s ease;
+    }
+
+    /* En modo oscuro ocultamos la imagen del header para mejor contraste */
+    body.dark-mode header {
+      background-image: none;
+      background-color: var(--gris-bloque);
     }
 
     .header-overlay {
@@ -40,29 +77,43 @@
       padding: 2rem 3rem;
       border-radius: 15px;
       box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      color: var(--texto-principal);
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    body.dark-mode .header-overlay {
+      background-color: rgba(38, 50, 56, 0.9);
+      box-shadow: 0 0 15px rgba(165,180,252,0.5);
+      color: var(--texto-principal);
     }
 
     h1 {
       font-size: 3rem;
       margin: 0;
+      text-align: center;
     }
 
+    /* Subtítulos centrados */
     .subtitle {
       font-size: 1.4rem;
       margin-top: 0.5rem;
+      text-align: center;
+      font-weight: 500;
+      color: var(--texto-principal);
+      transition: color 0.3s ease;
     }
 
     section {
       padding: 2rem;
       max-width: 900px;
       margin: 2rem auto;
-      background-color: var(--gris-bloque);
+      background-color: var(--fondo-bloques);
       border-radius: 12px;
+      transition: background-color 0.3s ease;
     }
 
-    /* Títulos h2 centrados y con estilo */
     h2 {
-      color: var(--azul-oscuro);
+      color: var(--texto-principal);
       margin-bottom: 1.5rem;
       text-align: center;
       font-weight: bold;
@@ -71,6 +122,7 @@
       padding-bottom: 0.3rem;
       margin-left: auto;
       margin-right: auto;
+      transition: color 0.3s ease, border-color 0.3s ease;
     }
 
     .languages-container {
@@ -81,9 +133,8 @@
       text-align: center;
     }
 
-    /* Lenguajes sin fondo */
     .language-item {
-      background-color: transparent;  /* Cambié esto */
+      background-color: transparent;
       border-radius: 12px;
       padding: 1.2rem;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -98,20 +149,22 @@
       height: 90px;
       display: block;
       margin: 0 auto 10px auto;
+      filter: var(--icon-filter);
+      transition: filter 0.3s ease;
     }
 
     .language-item p {
       font-size: 1.3rem;
       font-weight: bold;
-      color: var(--azul-oscuro);
+      color: var(--texto-principal);
+      transition: color 0.3s ease;
     }
 
-    /* Formulario sin fondo */
     .contact-form {
-      background-color: transparent; /* Cambié esto */
+      background-color: transparent;
       padding: 2rem;
       border-radius: 12px;
-      color: var(--azul-oscuro);
+      color: var(--texto-principal);
       max-width: 500px;
       margin: auto;
     }
@@ -124,18 +177,25 @@
       border-radius: 6px;
       font-size: 1rem;
       width: 100%;
-      background-color: white;
-      color: var(--azul-oscuro);
+      background-color: var(--color-fondo-input);
+      color: var(--color-texto-input);
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .contact-form input::placeholder,
+    .contact-form textarea::placeholder {
+      color: var(--color-texto-input);
+      opacity: 0.7;
     }
 
     .contact-form input:focus,
     .contact-form textarea:focus {
       outline: none;
-      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 0 5px var(--azul-medio);
     }
 
     .contact-form button {
-      background-color: var(--azul-oscuro);
+      background-color: var(--color-boton);
       color: #fff;
       border: none;
       padding: 0.85rem 1.5rem;
@@ -146,7 +206,7 @@
     }
 
     .contact-form button:hover {
-      background-color: #1d3557;
+      background-color: var(--color-boton-hover);
     }
 
     .social-links {
@@ -159,21 +219,43 @@
     }
 
     .social-links li a {
-      color: var(--azul-oscuro);
+      color: var(--color-enlaces);
       text-decoration: none;
       transition: color 0.3s ease;
     }
 
     .social-links li a:hover {
-      color: #5881b4;
+      color: var(--color-enlaces-hover);
     }
 
     footer {
-      background-color: var(--gris-bloque);
+      background-color: var(--fondo-bloques);
       color: #666;
       padding: 1rem 0;
       text-align: center;
       font-size: 0.85rem;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    /* Botón para cambiar tema */
+    #btn-toggle-theme {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: var(--color-boton);
+      color: white;
+      border: none;
+      padding: 0.7rem 1rem;
+      border-radius: 50px;
+      cursor: pointer;
+      font-size: 1.2rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: background-color 0.3s ease;
+      z-index: 1000;
+    }
+
+    #btn-toggle-theme:hover {
+      background-color: var(--color-boton-hover);
     }
   </style>
 </head>
@@ -212,9 +294,9 @@
 
     <h2>Redes Sociales</h2>
     <ul class="social-links">
-      <li><a href="https://www.linkedin.com/in/facundo-iriarte-54259b183" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
-      <li><a href="https://www.instagram.com/facu_iriartee/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
-      <li><a href="https://github.com/FacuIria" target="_blank"><i class="fab fa-github"></i> GitHub</a></li>
+      <li><a href="https://www.linkedin.com/in/facundo-iriarte-54259b183" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+      <li><a href="https://www.instagram.com/facu_iriartee/" target="_blank" rel="noopener"><i class="fab fa-instagram"></i> Instagram</a></li>
+      <li><a href="https://github.com/FacuIria" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a></li>
     </ul>
 
     <h2>Formulario de Contacto</h2>
@@ -229,6 +311,32 @@
   <footer>
     <p>&copy; 2025 Facundo Iriarte - Todos los derechos reservados</p>
   </footer>
+
+  <!-- Botón para cambiar tema -->
+  <button id="btn-toggle-theme" aria-label="Cambiar modo claro/oscuro">🌙</button>
+
+  <script>
+    const btnToggle = document.getElementById('btn-toggle-theme');
+    const body = document.body;
+
+    // Detecta tema guardado
+    const savedTheme = localStorage.getItem('theme');
+    if(savedTheme === 'dark') {
+      body.classList.add('dark-mode');
+      btnToggle.textContent = '☀️';
+    }
+
+    btnToggle.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+      if(body.classList.contains('dark-mode')) {
+        btnToggle.textContent = '☀️';
+        localStorage.setItem('theme', 'dark');
+      } else {
+        btnToggle.textContent = '🌙';
+        localStorage.setItem('theme', 'light');
+      }
+    });
+  </script>
 
 </body>
 </html>
