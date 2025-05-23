@@ -38,22 +38,24 @@
       text-align: center;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       overflow: hidden;
-      /* Background image customizable via inline style */
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
     }
 
-    /* Para que se pueda pasar la imagen al header inline o via JS,
-       dejamos esta clase para la foto */
-    header.custom-bg {
-      /* No background image here, se pone inline */
-    }
-
-    h1 {
+    header h1 {
       font-size: 5rem; /* Mucho más grande */
       margin-bottom: 0.3rem;
-      text-shadow: 1px 1px 4px rgba(0,0,0,0.15);
+      padding: 0.5rem 1.5rem;
+      background-color: rgba(0, 0, 0, 0.5); /* Fondo negro semitransparente */
+      color: white;
+      border: 3px solid rgba(255, 255, 255, 0.7);
+      border-radius: 12px;
+      box-shadow:
+        0 0 10px rgba(0,0,0,0.8),
+        0 0 20px rgba(255,255,255,0.6);
+      display: inline-block;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
     }
 
     h2 {
@@ -101,7 +103,7 @@
     }
 
     .language-item img {
-      height: 100px; /* Más grande */
+      height: 100px;
       display: block;
       margin: 0 auto 10px auto;
     }
