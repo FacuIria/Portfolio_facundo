@@ -9,13 +9,13 @@
   <style>
     /* Paleta de colores Modo Claro */
     :root {
-      --color-fondo-cuerpo: #fff8f0;       /* blanco cremoso */
-      --color-fondo-bloque: #fff3e0;       /* naranja pálido */
-      --color-texto-principal: #5a3e36;    /* marrón oscuro */
-      --color-acento: #f97316;              /* naranja fuerte */
+      --color-fondo-cuerpo: #fff8f0;
+      --color-fondo-bloque: #fff3e0;
+      --color-texto-principal: #5a3e36;
+      --color-acento: #f97316;
       --color-boton: #f97316;
       --color-boton-hover: #d4620b;
-      --color-fondo-header: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1470&q=80');
+      --color-fondo-header: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1470&q=80'); /* Puente Golden Gate día */
       --color-fondo-input: #fff;
       --color-texto-input: #5a3e36;
       --color-enlaces: #f97316;
@@ -24,13 +24,13 @@
 
     /* Paleta Modo Oscuro */
     body.dark-mode {
-      --color-fondo-cuerpo: #121b22;       /* azul muy oscuro */
-      --color-fondo-bloque: #1e2a38;       /* azul oscuro */
-      --color-texto-principal: #ffa65c;    /* naranja claro */
-      --color-acento: #ff8c42;              /* naranja fuerte */
+      --color-fondo-cuerpo: #121b22;
+      --color-fondo-bloque: #1e2a38;
+      --color-texto-principal: #ffa65c;
+      --color-acento: #ff8c42;
       --color-boton: #ff8c42;
       --color-boton-hover: #cc7234;
-      --color-fondo-header: url('https://images.unsplash.com/photo-1501594907352-04cda38ebc29?auto=format&fit=crop&w=1470&q=80'); /* foto nocturna */
+      --color-fondo-header: url('https://images.unsplash.com/photo-1501594907352-04cda38ebc29?auto=format&fit=crop&w=1470&q=80'); /* Puente Golden Gate noche */
       --color-fondo-input: #243447;
       --color-texto-input: #ffa65c;
       --color-enlaces: #ffa65c;
@@ -60,7 +60,7 @@
 
     /* Fondo semitransparente sobre el header para mejor lectura */
     .header-overlay {
-      background-color: rgba(255, 248, 240, 0.85); /* claro */
+      background-color: rgba(255, 248, 240, 0.85);
       display: inline-block;
       padding: 2rem 3rem;
       border-radius: 15px;
@@ -70,7 +70,7 @@
     }
 
     body.dark-mode .header-overlay {
-      background-color: rgba(18, 27, 34, 0.85); /* oscuro */
+      background-color: rgba(18, 27, 34, 0.85);
       box-shadow: 0 0 15px rgba(255, 166, 92, 0.7);
       color: var(--color-texto-principal);
     }
@@ -90,12 +90,17 @@
       transition: color 0.4s ease;
     }
 
-    section {
-      padding: 2rem;
+    main {
       max-width: 900px;
       margin: 2rem auto;
+      padding: 2rem 1rem;
+    }
+
+    section {
       background-color: var(--color-fondo-bloque);
       border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 2rem;
       transition: background-color 0.4s ease;
     }
 
@@ -137,7 +142,7 @@
       height: 90px;
       display: block;
       margin: 0 auto 10px auto;
-      filter: none; /* sin filtro, para que los colores originales se vean */
+      filter: none;
       transition: filter 0.3s ease;
     }
 
@@ -150,7 +155,7 @@
 
     .contact-form {
       background-color: transparent;
-      padding: 2rem;
+      padding: 2rem 0;
       border-radius: 12px;
       color: var(--color-texto-principal);
       max-width: 500px;
@@ -257,40 +262,44 @@
     </div>
   </header>
 
-  <section>
-    <h2>Sobre mí</h2>
-    <p style="max-width: 800px; margin: auto; text-align: center; font-size: 1.1rem;">
-      Actualmente soy estudiante de Ingeniería Informática en UADE, estoy transitando mi tercer año en la carrera.
-      Mi objetivo es progresar y crecer como desarrollador web y de aplicaciones.
-      Soy una persona que le gusta liderar equipos y también muy leal hacia sus compañeros.
-    </p>
+  <main>
+    <section>
+      <h2>Sobre mí</h2>
+      <p style="max-width: 800px; margin: auto; text-align: center; font-size: 1.1rem;">
+        Actualmente soy estudiante de Ingeniería Informática en UADE, estoy transitando mi tercer año en la carrera.
+        Mi objetivo es progresar y crecer como desarrollador web y de aplicaciones.
+        Soy una persona que le gusta liderar equipos y también muy leal hacia sus compañeros.
+      </p>
+    </section>
 
-    <h2>Lenguajes que manejo</h2>
-    <div class="languages-container">
-      <div class="language-item">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" />
-        <p>Java</p>
+    <section>
+      <h2>Lenguajes que manejo</h2>
+      <div class="languages-container">
+        <div class="language-item">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" />
+          <p>Java</p>
+        </div>
+        <div class="language-item">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" />
+          <p>Python</p>
+        </div>
+        <div class="language-item">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="SQL" />
+          <p>SQL</p>
+        </div>
       </div>
-      <div class="language-item">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" />
-        <p>Python</p>
-      </div>
-      <div class="language-item">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="SQL" />
-        <p>SQL</p>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section>
-    <h2>Contacto</h2>
-    <form class="contact-form" action="mailto:facuiria03@gmail.com" method="post" enctype="text/plain">
-      <input type="text" name="nombre" placeholder="Nombre" required />
-      <input type="email" name="email" placeholder="Correo electrónico" required />
-      <textarea name="mensaje" rows="5" placeholder="Mensaje" required></textarea>
-      <button type="submit">Enviar</button>
-    </form>
-  </section>
+    <section>
+      <h2>Contacto</h2>
+      <form class="contact-form" action="mailto:facuiria03@gmail.com" method="post" enctype="text/plain">
+        <input type="text" name="nombre" placeholder="Nombre" required />
+        <input type="email" name="email" placeholder="Correo electrónico" required />
+        <textarea name="mensaje" rows="5" placeholder="Mensaje" required></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+  </main>
 
   <button id="btn-toggle-theme" aria-label="Cambiar modo">🌙</button>
 
