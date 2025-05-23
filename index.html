@@ -12,7 +12,7 @@
     :root {
       --azul: #003366;
       --rojo: #ff4d4d;
-      --gris: #ffffff
+      --gris: #f2f2f2;
       --fuente: Arial, sans-serif;
     }
 
@@ -20,7 +20,7 @@
       margin: 0;
       font-size: 12px;
       font-family: var(--fuente);
-      background-color: #ffffff;
+      background-color: #eaeaea;
       color: #222;
     }
 
@@ -29,20 +29,58 @@
     }
 
     header {
-      background: linear-gradient(to right, rgba(0, 51, 102, 0.85), rgba(255, 77, 77, 0.85)),
-                  url('https://images.unsplash.com/photo-1594824476967-48c8b9642738?auto=format&fit=crop&w=1600&q=80');
-      background-size: cover;
-      background-position: center;
-      color: white;
+      position: relative;
+      overflow: hidden;
       padding: 4rem 1rem;
       text-align: center;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      color: white;
       clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
     }
 
-    h1 {
+    header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('https://images.unsplash.com/photo-1594824476967-48c8b9642738?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      filter: blur(4px) brightness(0.8);
+      z-index: 0;
+    }
+
+    header::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, rgba(0, 51, 102, 0.7), rgba(255, 77, 77, 0.7));
+      z-index: 1;
+    }
+
+    header h1, header p {
+      position: relative;
+      z-index: 2;
+      animation: slideFadeIn 1s ease forwards;
+      opacity: 0;
+    }
+
+    header h1 {
       font-size: 4rem;
       margin-bottom: 0.3rem;
+      animation-delay: 0.2s;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      animation-delay: 0.5s;
+    }
+
+    @keyframes slideFadeIn {
+      from {
+        transform: translateY(20px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
     }
 
     h2 {
@@ -84,7 +122,7 @@
     }
 
     .language-item img {
-      height: 120px;
+      height: 120px; /* íconos más grandes */
       display: block;
       margin: 0 auto 10px auto;
     }
@@ -211,4 +249,3 @@
   </footer>
 </body>
 </html>
-
