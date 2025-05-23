@@ -4,10 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Facundo Iriarte - Portfolio</title>
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
   <style>
-    /* Paleta de colores Modo Claro */
+    /* Variables de color */
     :root {
       --color-fondo-cuerpo: #fff8f0;
       --color-fondo-bloque: #fff3e0;
@@ -15,14 +14,13 @@
       --color-acento: #f97316;
       --color-boton: #f97316;
       --color-boton-hover: #d4620b;
-      --color-fondo-header: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1470&q=80'); /* Puente Golden Gate día */
+      --color-fondo-header: url('https://images.unsplash.com/photo-1501594907352-04cda38ebc29?auto=format&fit=crop&w=1470&q=80'); /* puente Golden Gate día */
       --color-fondo-input: #fff;
       --color-texto-input: #5a3e36;
       --color-enlaces: #f97316;
       --color-enlaces-hover: #d4620b;
     }
 
-    /* Paleta Modo Oscuro */
     body.dark-mode {
       --color-fondo-cuerpo: #121b22;
       --color-fondo-bloque: #1e2a38;
@@ -30,7 +28,7 @@
       --color-acento: #ff8c42;
       --color-boton: #ff8c42;
       --color-boton-hover: #cc7234;
-      --color-fondo-header: url('https://images.unsplash.com/photo-1501594907352-04cda38ebc29?auto=format&fit=crop&w=1470&q=80'); /* Puente Golden Gate noche */
+      --color-fondo-header: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1470&q=80'); /* puente Golden Gate noche */
       --color-fondo-input: #243447;
       --color-texto-input: #ffa65c;
       --color-enlaces: #ffa65c;
@@ -58,7 +56,7 @@
       transition: background-image 0.4s ease, color 0.4s ease;
     }
 
-    /* Fondo semitransparente sobre el header para mejor lectura */
+    /* Fondo semitransparente para mejorar lectura */
     .header-overlay {
       background-color: rgba(255, 248, 240, 0.85);
       display: inline-block;
@@ -158,133 +156,101 @@
       padding: 2rem 0;
       border-radius: 12px;
       color: var(--color-texto-principal);
-      max-width: 500px;
-      margin: auto;
+    }
+
+    .contact-form label {
+      display: block;
+      margin-bottom: 0.6rem;
+      font-weight: bold;
     }
 
     .contact-form input,
     .contact-form textarea {
-      margin-bottom: 1rem;
-      padding: 0.75rem;
-      border: none;
-      border-radius: 6px;
-      font-size: 1rem;
       width: 100%;
+      padding: 0.5rem;
+      margin-bottom: 1rem;
+      border: 1px solid var(--color-acento);
+      border-radius: 5px;
       background-color: var(--color-fondo-input);
       color: var(--color-texto-input);
+      font-size: 1rem;
       transition: background-color 0.4s ease, color 0.4s ease;
-    }
-
-    .contact-form input::placeholder,
-    .contact-form textarea::placeholder {
-      color: var(--color-texto-input);
-      opacity: 0.7;
-    }
-
-    .contact-form input:focus,
-    .contact-form textarea:focus {
-      outline: none;
-      box-shadow: 0 0 8px var(--color-acento);
     }
 
     .contact-form button {
       background-color: var(--color-boton);
-      color: #fff;
+      color: white;
       border: none;
-      padding: 0.85rem 1.5rem;
+      padding: 0.8rem 1.5rem;
       font-size: 1rem;
-      border-radius: 12px;
+      border-radius: 8px;
       cursor: pointer;
-      transition: background-color 0.4s ease, box-shadow 0.4s ease;
+      transition: background-color 0.3s ease;
     }
 
     .contact-form button:hover {
       background-color: var(--color-boton-hover);
     }
 
-    .social-links {
-      list-style: none;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      font-size: 1.2rem;
-      margin-bottom: 2rem;
-    }
-
-    .social-links li a {
+    a {
       color: var(--color-enlaces);
       text-decoration: none;
-      transition: color 0.4s ease;
+      transition: color 0.3s ease;
     }
 
-    .social-links li a:hover {
+    a:hover {
       color: var(--color-enlaces-hover);
     }
 
-    footer {
-      background-color: var(--color-fondo-bloque);
-      color: #888;
-      padding: 1rem 0;
-      text-align: center;
-      font-size: 0.85rem;
-      transition: background-color 0.4s ease, color 0.4s ease;
-    }
-
-    /* Botón para cambiar tema */
-    #btn-toggle-theme {
+    /* Botón modo oscuro */
+    #darkModeToggle {
       position: fixed;
-      bottom: 20px;
+      top: 20px;
       right: 20px;
       background-color: var(--color-boton);
       color: white;
       border: none;
-      padding: 0.7rem 1rem;
-      border-radius: 50px;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
       cursor: pointer;
-      font-size: 1.2rem;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
       transition: background-color 0.3s ease;
-      z-index: 1000;
+      z-index: 10;
     }
 
-    #btn-toggle-theme:hover {
+    #darkModeToggle:hover {
       background-color: var(--color-boton-hover);
     }
   </style>
 </head>
 <body>
+  <button id="darkModeToggle">Modo oscuro</button>
 
   <header>
     <div class="header-overlay">
       <h1>Facundo Iriarte</h1>
-      <p class="subtitle">Estudiante de Ingeniería Informática</p>
+      <p class="subtitle">Estudiante de Ingeniería Informática - UADE</p>
     </div>
   </header>
 
   <main>
     <section>
       <h2>Sobre mí</h2>
-      <p style="max-width: 800px; margin: auto; text-align: center; font-size: 1.1rem;">
-        Actualmente soy estudiante de Ingeniería Informática en UADE, estoy transitando mi tercer año en la carrera.
-        Mi objetivo es progresar y crecer como desarrollador web y de aplicaciones.
-        Soy una persona que le gusta liderar equipos y también muy leal hacia sus compañeros.
-      </p>
+      <p>Hola, soy Facundo Iriarte, estudiante de Ingeniería Informática en UADE, cursando el tercer año. Me apasiona el desarrollo web y de aplicaciones, y estoy en constante aprendizaje para crecer como desarrollador.</p>
     </section>
 
     <section>
       <h2>Lenguajes que manejo</h2>
       <div class="languages-container">
         <div class="language-item">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" />
-          <p>Java</p>
-        </div>
-        <div class="language-item">
           <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" />
           <p>Python</p>
         </div>
         <div class="language-item">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="SQL" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" />
+          <p>Java</p>
+        </div>
+        <div class="language-item">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg" alt="SQL" />
           <p>SQL</p>
         </div>
       </div>
@@ -293,34 +259,39 @@
     <section>
       <h2>Contacto</h2>
       <form class="contact-form" action="mailto:facuiria03@gmail.com" method="post" enctype="text/plain">
-        <input type="text" name="nombre" placeholder="Nombre" required />
-        <input type="email" name="email" placeholder="Correo electrónico" required />
-        <textarea name="mensaje" rows="5" placeholder="Mensaje" required></textarea>
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" name="nombre" required />
+
+        <label for="email">Correo electrónico</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="mensaje">Mensaje</label>
+        <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+
         <button type="submit">Enviar</button>
       </form>
     </section>
   </main>
 
-  <button id="btn-toggle-theme" aria-label="Cambiar modo">🌙</button>
-
-  <footer>
-    &copy; 2025 Facundo Iriarte
-  </footer>
-
   <script>
-    const btnToggle = document.getElementById('btn-toggle-theme');
+    const toggleBtn = document.getElementById('darkModeToggle');
     const body = document.body;
 
-    btnToggle.addEventListener('click', () => {
-      body.classList.toggle('dark-mode');
-
+    function updateButtonText() {
       if (body.classList.contains('dark-mode')) {
-        btnToggle.textContent = '☀️';
+        toggleBtn.textContent = 'Modo claro';
       } else {
-        btnToggle.textContent = '🌙';
+        toggleBtn.textContent = 'Modo oscuro';
       }
-    });
-  </script>
+    }
 
+    toggleBtn.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+      updateButtonText();
+    });
+
+    // Inicializar texto botón según modo por defecto
+    updateButtonText();
+  </script>
 </body>
 </html>
