@@ -4,83 +4,71 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Facundo Iriarte - Portfolio</title>
-
-  <!-- Íconos -->
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
   <style>
     :root {
-      --azul: #003366;
-      --rojo: #ff4d4d;
-      --gris: #dcdcdc; /* cambié para igualar con los fondos */
+      --azul-suave: #dceefa;
+      --azul-texto: #003366;
+      --rojo-suave: #fbe5e5;
+      --gris-claro: #f7f7f7;
+      --gris-medio: #e0e0e0;
+      --blanco-translucido: rgba(255, 255, 255, 0.85);
       --fuente: Arial, sans-serif;
     }
 
     body {
       margin: 0;
-      font-size: 12px;
       font-family: var(--fuente);
-      background-color: #eaeaea;
+      background-color: var(--gris-claro);
       color: #222;
-    }
-
-    h1, h2, h3, h4, h5, h6 {
-      font-family: var(--fuente);
+      font-size: 12px;
     }
 
     header {
       background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1470&q=80');
       background-size: cover;
       background-position: center;
-      background-repeat: no-repeat;
-      padding: 6rem 1rem;
+      padding: 5rem 1rem;
       text-align: center;
-      box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5);
+      position: relative;
+      color: var(--azul-texto);
     }
 
-    .title-container {
+    .header-overlay {
+      background-color: var(--blanco-translucido);
       display: inline-block;
-      background-color: rgba(255, 255, 255, 0.8); /* blanco semi-transparente */
-      padding: 1rem 2rem;
-      border-radius: 12px;
-      border: 3px solid rgba(0, 0, 0, 0.2);
-      box-shadow:
-        0 0 15px rgba(0,0,0,0.2),
-        0 0 30px rgba(0,0,0,0.15);
-      text-align: center;
+      padding: 2rem 3rem;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.15);
     }
 
-    header h1 {
-      font-size: 5rem;
+    h1 {
+      font-size: 3rem;
       margin: 0;
-      color: #002244; /* azul oscuro */
-      text-shadow: none;
     }
 
-    header p {
-      font-size: 2rem;
+    .subtitle {
+      font-size: 1.4rem;
       margin-top: 0.5rem;
-      color: #002244; /* azul oscuro */
-      font-weight: 600;
-      margin-bottom: 0;
-    }
-
-    h2 {
-      color: var(--azul);
-      margin-bottom: 1.5rem;
-      text-align: center;
-      font-weight: bold;
-      border-bottom: 2px solid var(--rojo);
-      display: inline-block;
-      padding-bottom: 0.3rem;
     }
 
     section {
       padding: 2rem;
       max-width: 900px;
-      margin: auto;
-      background-color: var(--gris);
+      margin: 2rem auto;
+      background-color: var(--gris-medio);
       border-radius: 12px;
+    }
+
+    h2 {
+      color: var(--azul-texto);
+      margin-bottom: 1.5rem;
+      text-align: center;
+      font-weight: bold;
+      border-bottom: 2px solid var(--rojo-suave);
+      display: inline-block;
+      padding-bottom: 0.3rem;
     }
 
     .languages-container {
@@ -92,57 +80,67 @@
     }
 
     .language-item {
+      background-color: var(--azul-suave);
+      border-radius: 12px;
+      padding: 1rem;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       cursor: pointer;
-      border-radius: 10px;
-      padding: 10px;
-      background-color: var(--gris); /* fondo igual que sección */
     }
 
     .language-item:hover {
       transform: scale(1.1);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
     }
 
     .language-item img {
-      height: 120px; /* más grande */
+      height: 90px;
       display: block;
       margin: 0 auto 10px auto;
+    }
+
+    .language-item p {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: var(--azul-texto);
+    }
+
+    .contact-form {
+      background-color: #111;
+      padding: 2rem;
+      border-radius: 12px;
+      color: white;
     }
 
     .contact-form input,
     .contact-form textarea {
       margin-bottom: 1rem;
       padding: 0.75rem;
-      border: 1px solid #ccc;
+      border: none;
       border-radius: 6px;
       font-size: 1rem;
       width: 100%;
-      transition: border 0.3s ease, box-shadow 0.3s ease;
     }
 
     .contact-form input:focus,
     .contact-form textarea:focus {
-      border-color: var(--azul);
-      box-shadow: 0 0 5px rgba(0, 51, 102, 0.4);
       outline: none;
+      box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
     }
 
     .contact-form button {
-      background-color: var(--azul);
+      background-color: var(--azul-texto);
       color: #fff;
       border: none;
       padding: 0.85rem 1.5rem;
       font-size: 1rem;
       border-radius: 12px;
       cursor: pointer;
-      box-shadow: 0 3px 6px rgba(0, 64, 128, 0.3);
       transition: background-color 0.3s ease, box-shadow 0.3s ease;
     }
 
     .contact-form button:hover {
-      background-color: var(--rojo);
-      box-shadow: 0 6px 12px rgba(224, 102, 102, 0.6);
+      background-color: var(--rojo-suave);
+      color: #000;
     }
 
     .social-links {
@@ -155,17 +153,17 @@
     }
 
     .social-links li a {
-      color: var(--azul);
+      color: var(--azul-texto);
       text-decoration: none;
       transition: color 0.3s ease;
     }
 
     .social-links li a:hover {
-      color: var(--rojo);
+      color: var(--rojo-suave);
     }
 
     footer {
-      background-color: #f2f2f2;
+      background-color: var(--gris-medio);
       color: #555;
       padding: 1rem 0;
       text-align: center;
@@ -176,10 +174,11 @@
   </style>
 </head>
 <body>
+
   <header>
-    <div class="title-container">
+    <div class="header-overlay">
       <h1>Facundo Iriarte</h1>
-      <p>-Estudiante de Ingeniería Informática-</p>
+      <p class="subtitle">Estudiante de Ingeniería Informática</p>
     </div>
   </header>
 
@@ -232,5 +231,6 @@
   <footer>
     <p>&copy; 2025 Facundo Iriarte - Todos los derechos reservados</p>
   </footer>
+
 </body>
 </html>
