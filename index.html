@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Facundo Iriarte - Portfolio</title>
 
   <!-- Íconos -->
@@ -12,20 +12,17 @@
     :root {
       --azul: #003366;
       --rojo: #ff4d4d;
-      --gris: #f2f2f2;
-      --negro: #111;
-      --blanco: #fff;
+      --gris: #dcdcdc;
+      --gris-claro-iconos: #f9f9f9;
+      --negro: #222;
       --fuente: Arial, sans-serif;
-
-      /* Pone aquí la URL de tu foto para el header */
-      --header-foto: url('https://images.unsplash.com/photo-1594824476967-48c8b9642738?auto=format&fit=crop&w=1600&q=80');
     }
 
     body {
       margin: 0;
       font-size: 12px;
       font-family: var(--fuente);
-      background-color: var(--blanco);
+      background-color: #eaeaea;
       color: var(--negro);
     }
 
@@ -33,63 +30,30 @@
       font-family: var(--fuente);
     }
 
-    /* Header con foto personalizable */
     header {
       position: relative;
-      overflow: hidden;
-      padding: 4rem 1rem;
+      background: linear-gradient(to bottom right, #ffffff 50%, #a3b18a 50%);
+      color: var(--negro);
+      padding: 6rem 1rem 3rem;
       text-align: center;
-      color: var(--blanco);
-      clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
-      background-color: var(--blanco);
-      /* Si querés no usar imagen, queda blanco */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      /* Background image customizable via inline style */
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
     }
 
-    header::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: var(--header-foto) center/cover no-repeat;
-      filter: blur(4px) brightness(0.8);
-      z-index: 0;
-      transition: background 0.5s ease;
+    /* Para que se pueda pasar la imagen al header inline o via JS,
+       dejamos esta clase para la foto */
+    header.custom-bg {
+      /* No background image here, se pone inline */
     }
 
-    header::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to right, rgba(0, 51, 102, 0.7), rgba(255, 77, 77, 0.7));
-      z-index: 1;
-    }
-
-    header h1, header p {
-      position: relative;
-      z-index: 2;
-      animation: slideFadeIn 1s ease forwards;
-      opacity: 0;
-    }
-
-    header h1 {
-      font-size: 4rem;
+    h1 {
+      font-size: 5rem; /* Mucho más grande */
       margin-bottom: 0.3rem;
-      animation-delay: 0.2s;
-    }
-
-    header p {
-      font-size: 1.2rem;
-      animation-delay: 0.5s;
-    }
-
-    @keyframes slideFadeIn {
-      from {
-        transform: translateY(20px);
-        opacity: 0;
-      }
-      to {
-        transform: translateY(0);
-        opacity: 1;
-      }
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.15);
     }
 
     h2 {
@@ -108,13 +72,7 @@
       margin: auto;
       background-color: var(--gris);
       border-radius: 12px;
-      color: var(--negro);
-    }
-
-    /* Sección Contacto vuelve a fondo gris suave y texto negro */
-    section.contact {
-      background-color: var(--gris);
-      color: var(--negro);
+      margin-bottom: 2rem;
     }
 
     .languages-container {
@@ -130,9 +88,9 @@
       cursor: pointer;
       border-radius: 10px;
       padding: 10px;
-      background-color: var(--blanco);
+      background-color: var(--gris-claro-iconos);
       color: var(--negro);
-      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
       width: 140px;
       user-select: none;
     }
@@ -143,7 +101,7 @@
     }
 
     .language-item img {
-      height: 120px;
+      height: 100px; /* Más grande */
       display: block;
       margin: 0 auto 10px auto;
     }
@@ -157,20 +115,18 @@
       font-size: 1rem;
       width: 100%;
       transition: border 0.3s ease, box-shadow 0.3s ease;
-      color: var(--negro);
-      background-color: var(--blanco);
     }
 
     .contact-form input:focus,
     .contact-form textarea:focus {
-      border-color: var(--rojo);
-      box-shadow: 0 0 5px rgba(255, 77, 77, 0.7);
+      border-color: var(--azul);
+      box-shadow: 0 0 5px rgba(0, 51, 102, 0.4);
       outline: none;
     }
 
     .contact-form button {
       background-color: var(--azul);
-      color: var(--blanco);
+      color: #fff;
       border: none;
       padding: 0.85rem 1.5rem;
       font-size: 1rem;
@@ -192,7 +148,6 @@
       justify-content: center;
       gap: 2rem;
       font-size: 1.2rem;
-      color: var(--negro);
     }
 
     .social-links li a {
@@ -206,7 +161,7 @@
     }
 
     footer {
-      background-color: var(--gris);
+      background-color: #f2f2f2;
       color: #555;
       padding: 1rem 0;
       text-align: center;
@@ -217,7 +172,7 @@
   </style>
 </head>
 <body>
-  <header>
+  <header style="background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1470&q=80');">
     <h1>Facundo Iriarte</h1>
     <p>-Estudiante de Ingeniería Informática-</p>
   </header>
@@ -258,7 +213,7 @@
     </ul>
   </section>
 
-  <section class="contact">
+  <section>
     <h2>Formulario de Contacto</h2>
     <form class="contact-form" action="https://formspree.io/f/xjkwjwzj" method="POST" style="max-width: 500px; margin: auto;">
       <input type="text" name="nombre" placeholder="Tu nombre" required />
