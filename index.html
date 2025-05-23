@@ -29,11 +29,15 @@
     }
 
     header {
-      background: linear-gradient(to right, var(--azul), var(--rojo));
+      background: linear-gradient(to right, rgba(0, 51, 102, 0.8), rgba(255, 77, 77, 0.8)),
+                  url('https://images.unsplash.com/photo-1600585154340-be6161b89b6c?auto=format&fit=crop&w=1600&q=80');
+      background-size: cover;
+      background-position: center;
       color: white;
       padding: 3rem 1rem;
       text-align: center;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
     }
 
     h1 {
@@ -80,7 +84,7 @@
     }
 
     .language-item img {
-      height: 80px;
+      height: 120px;
       display: block;
       margin: 0 auto 10px auto;
     }
