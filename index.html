@@ -41,7 +41,8 @@
       font-family: Arial, sans-serif;
       background-color: var(--color-fondo-cuerpo);
       color: var(--color-texto-principal);
-      font-size: 12px;
+      font-size: 16px; /* aumento de tamaño */
+      line-height: 1.6;
       transition: background-color 0.4s ease, color 0.4s ease;
     }
 
@@ -94,18 +95,19 @@
       padding: 2rem 1rem;
     }
 
+    /* Ahora un solo bloque para todo el contenido */
     section {
       background-color: var(--color-fondo-bloque);
       border-radius: 12px;
-      padding: 2rem;
+      padding: 2rem 2.5rem;
       margin-bottom: 2rem;
       transition: background-color 0.4s ease;
+      text-align: center; /* para centrar títulos y subtítulos */
     }
 
     h2 {
       color: var(--color-texto-principal);
       margin-bottom: 1.5rem;
-      text-align: center;
       font-weight: bold;
       border-bottom: 2px solid var(--color-acento);
       display: inline-block;
@@ -113,6 +115,15 @@
       margin-left: auto;
       margin-right: auto;
       transition: color 0.4s ease, border-color 0.4s ease;
+      text-align: center;
+    }
+
+    p {
+      max-width: 700px;
+      margin: 0 auto 1.6rem auto;
+      text-align: center;
+      font-size: 1rem;
+      line-height: 1.5;
     }
 
     .languages-container {
@@ -120,7 +131,7 @@
       justify-content: center;
       gap: 2rem;
       flex-wrap: wrap;
-      text-align: center;
+      margin-bottom: 2rem;
     }
 
     .language-item {
@@ -129,6 +140,8 @@
       padding: 1.2rem;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       cursor: default;
+      text-align: center;
+      width: 110px;
     }
 
     .language-item:hover {
@@ -138,24 +151,28 @@
 
     .language-item img {
       height: 90px;
-      display: block;
       margin: 0 auto 10px auto;
       filter: none;
       transition: filter 0.3s ease;
+      display: block;
     }
 
     .language-item p {
       font-size: 1.3rem;
       font-weight: bold;
       color: var(--color-texto-principal);
+      margin: 0;
       transition: color 0.4s ease;
     }
 
     .contact-form {
       background-color: transparent;
-      padding: 2rem 0;
+      padding-top: 1rem;
       border-radius: 12px;
       color: var(--color-texto-principal);
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: left; /* Para el formulario, texto alineado a la izquierda */
     }
 
     .contact-form label {
@@ -175,6 +192,7 @@
       color: var(--color-texto-input);
       font-size: 1rem;
       transition: background-color 0.4s ease, color 0.4s ease;
+      box-sizing: border-box;
     }
 
     .contact-form button {
@@ -236,9 +254,7 @@
     <section>
       <h2>Sobre mí</h2>
       <p>Hola, soy Facundo Iriarte, estudiante de Ingeniería Informática en UADE, cursando el tercer año. Me apasiona el desarrollo web y de aplicaciones, y estoy en constante aprendizaje para crecer como desarrollador.</p>
-    </section>
 
-    <section>
       <h2>Lenguajes que manejo</h2>
       <div class="languages-container">
         <div class="language-item">
@@ -254,9 +270,7 @@
           <p>SQL</p>
         </div>
       </div>
-    </section>
 
-    <section>
       <h2>Contacto</h2>
       <form class="contact-form" action="mailto:facuiria03@gmail.com" method="post" enctype="text/plain">
         <label for="nombre">Nombre</label>
